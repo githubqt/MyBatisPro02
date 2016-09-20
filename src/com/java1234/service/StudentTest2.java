@@ -26,7 +26,7 @@ public class StudentTest2 {
 	private StudentMapper studentMapper=null;
 	
 	/**
-	 * ²âÊÔ·½·¨Ç°µ÷ÓÃ
+	 * æµ‹è¯•æ–¹æ³•å‰è°ƒç”¨
 	 * @throws Exception
 	 */
 	@Before
@@ -36,7 +36,7 @@ public class StudentTest2 {
 	}
 
 	/**
-	 * ²âÊÔ·½·¨ºóµ÷ÓÃ
+	 * æµ‹è¯•æ–¹æ³•åè°ƒç”¨
 	 * @throws Exception
 	 */
 	@After
@@ -47,14 +47,14 @@ public class StudentTest2 {
 	
 	@Test
 	public void testInsertStudent(){
-		logger.info("Ìí¼ÓÑ§Éú");
+		logger.info("æ·»åŠ å­¦ç”Ÿ");
 		Student student=new Student();
-		student.setName("ÕÅÈı4");
-		student.setAge(14);
-		student.setRemark("ºÜ³¤µÄ±¾ÎÄ...");
+		student.setName("å¼ ä¸‰5");
+		student.setAge(16);
+		student.setRemark("å¾ˆé•¿çš„æœ¬æ–‡...");
 		byte []pic=null;
 		try{
-			File file=new File("c://boy.jpg");
+			File file=new File("D://eclipse-java-Workspaces/MyBatisPro02/boy2.jpg");
 			InputStream inputStream=new FileInputStream(file);
 			pic=new byte[inputStream.available()];
 			inputStream.read(pic);
@@ -69,12 +69,12 @@ public class StudentTest2 {
 	
 	@Test
 	public void testGetStudentById(){
-		logger.info("Í¨¹ıID²éÕÒÑ§Éú");
+		logger.info("é€šè¿‡IDæŸ¥æ‰¾å­¦ç”Ÿ");
 		Student student=studentMapper.getStudentById(4);
 		System.out.println(student);
 		byte []pic=student.getPic();
 		try{
-			File file=new File("d://boy2.jpg");
+			File file=new File("D://eclipse-java-Workspaces/MyBatisPro02/boy2.jpg");
 			OutputStream outputStream=new FileOutputStream(file);
 			outputStream.write(pic);
 			outputStream.close();
@@ -85,7 +85,7 @@ public class StudentTest2 {
 	
 	@Test
 	public void testSearchStudents6() {
-		logger.info("Ìí¼ÓÑ§Éú(´øÌõ¼ş)");
+		logger.info("æ·»åŠ å­¦ç”Ÿ(å¸¦æ¡ä»¶)");
 		List<Student> studentList=studentMapper.searchStudents6("%3%",12);
 		for(Student student:studentList){
 			System.out.println(student);

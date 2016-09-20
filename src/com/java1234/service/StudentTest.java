@@ -22,7 +22,7 @@ public class StudentTest {
 	private StudentMapper studentMapper=null;
 	
 	/**
-	 * ²âÊÔ·½·¨Ç°µ÷ÓÃ
+	 * æµ‹è¯•æ–¹æ³•å‰è°ƒç”¨
 	 * @throws Exception
 	 */
 	@Before
@@ -32,7 +32,7 @@ public class StudentTest {
 	}
 
 	/**
-	 * ²âÊÔ·½·¨ºóµ÷ÓÃ
+	 * æµ‹è¯•æ–¹æ³•åè°ƒç”¨
 	 * @throws Exception
 	 */
 	@After
@@ -42,10 +42,10 @@ public class StudentTest {
 
 	@Test
 	public void testSearchStudents() {
-		logger.info("Ìí¼ÓÑ§Éú(´øÌõ¼ş)");
+		logger.info("æ·»åŠ å­¦ç”Ÿ(å¸¦æ¡ä»¶)");
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("gradeId", 2);
-		map.put("name", "%Àî%");
+		map.put("name", "%æ%");
 		// map.put("age", 11);
 		List<Student> studentList=studentMapper.searchStudents(map);
 		for(Student student:studentList){
@@ -55,11 +55,11 @@ public class StudentTest {
 	
 	@Test
 	public void testSearchStudents2() {
-		logger.info("Ìí¼ÓÑ§Éú(´øÌõ¼ş)");
+		logger.info("æ·»åŠ å­¦ç”Ÿ(å¸¦æ¡ä»¶)");
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("searchBy", "age");
 		map.put("gradeId", 2);
-		map.put("name", "%Àî%");
+		map.put("name", "%æ%");
 		map.put("age", 11);
 		List<Student> studentList=studentMapper.searchStudents2(map);
 		for(Student student:studentList){
@@ -69,10 +69,10 @@ public class StudentTest {
 
 	@Test
 	public void testSearchStudents3() {
-		logger.info("Ìí¼ÓÑ§Éú(´øÌõ¼ş)");
+		logger.info("æ·»åŠ å­¦ç”Ÿ(å¸¦æ¡ä»¶)");
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("gradeId", 2);
-		map.put("name", "%Àî%");
+		map.put("name", "%æ%");
 		map.put("age", 11);
 		List<Student> studentList=studentMapper.searchStudents3(map);
 		for(Student student:studentList){
@@ -82,10 +82,10 @@ public class StudentTest {
 	
 	@Test
 	public void testSearchStudents4() {
-		logger.info("Ìí¼ÓÑ§Éú(´øÌõ¼ş)");
+		logger.info("æ·»åŠ å­¦ç”Ÿ(å¸¦æ¡ä»¶)");
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("gradeId", 2);
-		// map.put("name", "%Àî%");
+		// map.put("name", "%æ%");
 		// map.put("age", 11);
 		List<Student> studentList=studentMapper.searchStudents4(map);
 		for(Student student:studentList){
@@ -95,7 +95,7 @@ public class StudentTest {
 	
 	@Test
 	public void testSearchStudents5() {
-		logger.info("Ìí¼ÓÑ§Éú(´øÌõ¼ş)");
+		logger.info("æ·»åŠ å­¦ç”Ÿ(å¸¦æ¡ä»¶)");
 		Map<String,Object> map=new HashMap<String,Object>();
 		List<Integer> gradeIds=new ArrayList<Integer>();
 		// gradeIds.add(1);
@@ -109,10 +109,10 @@ public class StudentTest {
 	
 	@Test
 	public void testUpdateStudent(){
-		logger.info("¸üĞÂÑ§Éú(´øÌõ¼ş)");
+		logger.info("æ›´æ–°å­¦ç”Ÿ(å¸¦æ¡ä»¶)");
 		Student student=new Student();
-		student.setId(1);
-		student.setName("ÕÅÈı3");
+		student.setId(2);
+		student.setName("å¼ ä¸‰3");
 		student.setAge(13);
 		studentMapper.updateStudent(student);
 		sqlSession.commit();
