@@ -84,6 +84,13 @@ public class StudentTest2 {
 	}
 	
 	@Test
+	public void testGetStudentById1(){
+		logger.info("通过ID查找学生");
+		Student student=studentMapper.getStudentById1(1);
+		System.out.println(student);
+	}
+	
+	@Test
 	public void testSearchStudents6() {
 		logger.info("添加学生(带条件)");
 		List<Student> studentList=studentMapper.searchStudents6("%3%",12);
